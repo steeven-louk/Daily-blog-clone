@@ -15,6 +15,7 @@
     border-left: 0;
     border-bottom: 0;
 
+
     .filter-side{
         transition: .4s all ease-in;
         transform: translateX(-30em);
@@ -35,16 +36,20 @@
     }
 
     .nav-item {
+        
         line-height: 15px;
         display: flex;
+       
 
         .icon{
             color: red;
             background-color: red;
         }
+
         &:hover{
             background: rgba(0, 0, 0,.5);
-            color:#fff!important
+            
+           
         }
     }
 

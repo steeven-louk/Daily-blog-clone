@@ -33,7 +33,10 @@ const Feed = () => {
                     <h4 className='text-muted'>Add to shorcut +</h4>
                 </div>
                 <div className="row">
-                    <CardList />
+                {getFeed && getFeed.map(feed =>(
+                    <CardList feed={feed} key={feed.id} />
+                ))}
+                    
                 </div>
             </div>
 
