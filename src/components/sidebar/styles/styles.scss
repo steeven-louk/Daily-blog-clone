@@ -1,11 +1,13 @@
 .sidebar__section{
    
 
-    position: sticky;
-    top: 0px;
+    position:fixed;
+    top:3.95em;
+    left:0;
+    z-index: 2;
 
-   
-    height: calc(100vh - 70px);
+    max-height: calc(100vh - 63px);
+    height: 100%;
     max-width: 250px;
     width: 100%;
     //border: 2px solid #ff0000;
@@ -19,7 +21,7 @@
         visibility: hidden;
         position: absolute;
         top:0;
-      z-index: 7;
+        z-index: 7;
     }
 
     .show-filter{

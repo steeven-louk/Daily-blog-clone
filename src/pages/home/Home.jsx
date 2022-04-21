@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/navbar'
 import Sidebar from '../../components/sidebar'
+import Feed from '../feed'
 
 import './styles/styles.scss'
 function Home() {
@@ -9,9 +10,10 @@ function Home() {
       <Navbar />
     
     <div className="page">
-      <Sidebar />
+    <div className='sidebar'> <Sidebar /></div>
+     
       <div className='bg-dark text-white page-container'>
-        home
+          <Feed />
       </div>
     </div>
     </>
