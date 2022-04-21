@@ -1,0 +1,49 @@
+.navbar__section {
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #ff0000;
+.profile{
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    
+    img{
+        width: 45px;
+        border-radius: 100%;
+        margin-right: 10px;
+        
+    }
+
+    .sub-menu-profile{
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        background: rgb(56, 56, 56);
+        color: #fff;
+        width: 11em;
+        top: 3.5em;
+        right: 0rem;
+        border: 0.5px solid green;
+        border-radius: 15px;
+    }
+
+    .sub-menu-show{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        background: rgb(56, 56, 56);
+        color: #fff;
+        width: 11em;
+        top: 3.5em;
+        right: 0rem;
+        border: 0.5px solid green;
+        border-radius: 15px;
+    }
+
+    .nav-item:hover{
+        border-radius: 15px;
+        background: rgba(221, 221, 221, 0.199);
+    }
+}
+}

@@ -1,0 +1,55 @@
+.sidebar__section{
+   
+
+    position: sticky;
+    top: 0px;
+
+   
+    height: calc(100vh - 70px);
+    max-width: 250px;
+    width: 100%;
+    //border: 2px solid #ff0000;
+    border:1px solid red ;
+    border-left: 0;
+    border-bottom: 0;
+
+    .filter-side{
+        transition: .4s all ease-in;
+        transform: translateX(-30em);
+        visibility: hidden;
+        position: absolute;
+        top:0;
+      z-index: 7;
+    }
+
+    .show-filter{
+        transition: .4s all ease-in;
+        visibility: visible;
+        position: absolute;
+        top:0;
+        z-index: 7;
+        
+        transform: translateX(0em);
+    }
+
+    .nav-item {
+        line-height: 15px;
+        display: flex;
+
+        .icon{
+            color: red;
+            background-color: red;
+        }
+        &:hover{
+            background: rgba(0, 0, 0,.5);
+            color:#fff!important
+        }
+    }
+
+    .footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+  
+}
