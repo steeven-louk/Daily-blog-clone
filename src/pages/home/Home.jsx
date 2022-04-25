@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../components/navbar'
 import Sidebar from '../../components/sidebar'
 import Feed from '../feed'
+import Upvoted from '../upvoted'
 
 import './styles/styles.scss'
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
     <div className='sidebar'> <Sidebar /></div>
      
       <div className='bg-dark text-white page-container'>
-          <Feed />
+          <Upvoted />
       </div>
     </div>
     </>
