@@ -9,7 +9,7 @@ const Sidebar = () => {
 
 
   return (
-    <div className="sidebar__section bg-dark">
+    <div className="sidebar__section">
       <div className="sidebar-container mx-3 py-5  text-white">
         <div className="d-flex flex-column">
            <div className={showFilter ? 'show-filter' : 'filter-side' }>

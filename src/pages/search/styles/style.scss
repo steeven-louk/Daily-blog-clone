@@ -1,0 +1,24 @@
+.feed__section {
+    padding: 0 60px;
+   
+    .form-group {
+        position: relative;
+        width: 100%;
+        padding-top: 40px;
+        input{
+            
+            border-radius: 10px;
+            border: 1px solid rgb(82, 81, 81);
+            outline: none;
+            overflow: hidden;
+            padding-left: 70px;
+
+        }
+
+        .search-icon{
+            position: absolute;
+            top: 3.2em;
+            left: 2.5em;
+        }
+    }
+}

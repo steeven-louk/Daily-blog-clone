@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -12,10 +12,38 @@ const CardList = ({
     social_image,
     reading_time_minutes,
     user
-  },
+  }, feed,
 }) => {
 
-   
+
+ // const [addBookmark, setAddBookmark] = useState([]);
+
+   const addBook =  () =>{
+      try {
+
+
+        let article = JSON.parse(localStorage.getItem('article'))
+        console.log(article);
+
+        if(article) {
+          article.push(feed);
+          localStorage.setItem("article", JSON.stringify(article));
+          console.log(article);
+        }
+        else{
+          article = [];
+          article.push(feed);
+          localStorage.setItem("article", JSON.stringify(article));
+          console.log(article);
+        }
+       
+      } catch (error) {
+        console.log('error', error.message);
+      }
+   }
+
+
+
   return (
     <>
       <div className="card col-md-4 col-sm-12 bg-dark text-white border">
@@ -83,7 +111,7 @@ const CardList = ({
               <FontAwesomeIcon className="pt-3 " icon="fa-solid fa-message" /> {comments_count}
             </span>
 
-            <span>
+            <span onClick={addBook}>
               <FontAwesomeIcon
                 className="pt-3 px-3"
                 icon="fa-solid fa-bookmark"
