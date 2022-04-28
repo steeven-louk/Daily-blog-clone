@@ -33,8 +33,8 @@ console.log('book', getBookmark)
                 (
                     <div>
                     <div className="title d-flex justify-content-between">
-                    <h3 className='text-white'>My feed</h3>
-                    <h4 className='text-muted'>Add to shorcut +</h4>
+                    <h3 className='text-white'>Bookmarks</h3>
+                  
                 </div>
                 <div className="row">
                 {getBookmark && getBookmark.map(bookmark =>(

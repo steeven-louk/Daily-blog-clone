@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./styles/styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,12 +11,11 @@ const CardList = ({
     positive_reactions_count,
     social_image,
     reading_time_minutes,
+    url,
     user
   }, feed,
 }) => {
 
-
- // const [addBookmark, setAddBookmark] = useState([]);
 
    const addBook =  () =>{
       try {
@@ -85,6 +84,7 @@ const CardList = ({
         </div>
 
         <div className="card-body">
+          <a href={url} target='_blank' rel="noreferrer">
           <h5 className="card-title text-white text-uppercase">
             {title}
           </h5>{" "}
@@ -96,7 +96,9 @@ const CardList = ({
               alt=""
               className="card-img"
             />
+
           </div>
+          </a>
           <div className="footer-card d-flex justify-content-between">
             <span>
               {" "}

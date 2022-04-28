@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import FeedFilter from "../feedFilter";
 import "./styles/styles.scss";
 
@@ -17,8 +18,10 @@ const Sidebar = () => {
            </div>
           <header className="d-flex  text-muted justify-content-between">
             <h5>
+            <Link to="/" >
               <FontAwesomeIcon icon="fa-solid fa-house" className="me-3" />
-              my seed
+              my feed
+              </Link>
             </h5>
             <FontAwesomeIcon icon="fa-solid fa-sliders" className="icon" onClick={()=> setShowFilter(!showFilter)} />
           </header>
@@ -41,27 +44,27 @@ const Sidebar = () => {
                     className="my-2"
                     icon="fa-solid fa-arrow-up"
                   />
-                  <a href="/" className="nav-link">
+                  <Link to="/upvoted" className="nav-link">
                     Most upvoted
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <FontAwesomeIcon
                     className="my-2"
                     icon="fa-solid fa-message"
                   />
-                  <a href="/" className="nav-link">
+                  <Link to="/discussed" className="nav-link">
                     Best discussions
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <FontAwesomeIcon
                     className="my-2"
                     icon="fa-solid fa-magnifying-glass"
                   />
-                  <a href="/" className="nav-link">
+                  <Link to="/search" className="nav-link">
                     Search
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -74,9 +77,9 @@ const Sidebar = () => {
                     className="my-2"
                     icon="fa-solid fa-bookmark"
                   />
-                  <a href="/" className="nav-link">
+                  <Link to="/bookmark" className="nav-link">
                     Bookmarks
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <FontAwesomeIcon className="my-2" icon="fa-solid fa-eye" />

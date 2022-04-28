@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 import Navbar from '../../components/navbar'
 import Sidebar from '../../components/sidebar'
 import BestDiscution from '../bestDiscution'
@@ -17,7 +18,14 @@ function Home() {
     <div className='sidebar'> <Sidebar /></div>
       
       <div className='text-white bg-dark page-container'>
-      <Bookmark />
+          <Routes>
+              <Route path='/' exact element={<Feed />}  />
+              <Route path='/upvoted' exact element={<Upvoted />}  />
+              <Route path='/discussed' exact element={<BestDiscution />}  />
+              <Route path='/search' exact element={<Search />}  />
+              <Route path='/bookmark' exact element={<Bookmark />}  />
+          </Routes>
+      
       </div>
     </div>
     </>
