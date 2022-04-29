@@ -1,6 +1,5 @@
 .sidebar__section{
    
-
     position:fixed;
     top:3.95em;
     left:0;
@@ -11,9 +10,10 @@
     max-width: 250px;
     width: 100%;
     //border: 2px solid #ff0000;
-    border:1px solid red ;
+    border: 1px solid red ;
     border-left: 0;
     border-bottom: 0;
+
 
 
     .filter-side{
@@ -39,6 +39,7 @@
         
         line-height: 15px;
         display: flex;
+        border-radius: 10px;
        
 
         .icon{

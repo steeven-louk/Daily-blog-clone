@@ -5,6 +5,7 @@ import Sidebar from '../../components/sidebar'
 import BestDiscution from '../bestDiscution'
 import Bookmark from '../bookmark'
 import Feed from '../feed'
+import Popular from '../popular'
 import Search from '../search'
 import Upvoted from '../upvoted'
 
@@ -20,10 +21,11 @@ function Home() {
       <div className='text-white bg-dark page-container'>
           <Routes>
               <Route path='/' exact element={<Feed />}  />
-              <Route path='/upvoted' exact element={<Upvoted />}  />
-              <Route path='/discussed' exact element={<BestDiscution />}  />
-              <Route path='/search' exact element={<Search />}  />
-              <Route path='/bookmark' exact element={<Bookmark />}  />
+              <Route path='/popular' element={<Popular />}  />
+              <Route path='/upvoted' element={<Upvoted />}  />
+              <Route path='/discussed' element={<BestDiscution />}  />
+              <Route path='/search' element={<Search />}  />
+              <Route path='/bookmark' element={<Bookmark />}  />
           </Routes>
       
       </div>

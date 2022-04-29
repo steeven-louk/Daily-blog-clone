@@ -32,7 +32,7 @@ const Upvoted = () => {
             <div className="container">
                 <div className="title d-flex justify-content-between">
                     <h3 className='text-white'>Upvoted</h3>
-                    <h4 className='text-muted'>Add to shorcut +</h4>
+                    <h4 className='text-muted'>Last week </h4>
                 </div>
                 <div className="row">
                 {getUpvoted && getUpvoted.sort((a,b) => b.positive_reactions_count - a.positive_reactions_count).map(upvoted =>(

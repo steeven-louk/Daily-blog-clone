@@ -1,17 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import './styles/style.scss'
+//import './styles/style.scss'
 import CardList from '../../components/cardList';
-const Feed = () => {
+const Popular = () => {
 
-    const URL = "https://dev.to/api/articles"
-    const [getFeed, setgetFeed] = useState([]);
+    const URL = "https://dev.to/api/articles/latest"
+    const [getPopular, setgetPopular] = useState([]);
 
 
-    const getfeed = async() =>{
+    const Popular = async() =>{
        try {
         const item = await axios.get(URL);
-        setgetFeed(item.data);
+        setgetPopular(item.data);
         console.log('item',item.data);
         
        } catch (error) {
@@ -21,19 +21,19 @@ const Feed = () => {
 
 
     useEffect(() => {
-       getfeed();
+       Popular();
     }, []);
 
   return (
     <div className='feed__section'>
         <div className="feed__container">
             <div className="container">
-                <div className="title d-flex justify-content-between">
-                    <h3 className='text-white'>My feed</h3>
+                <div className="title pt-5 d-flex justify-content-between">
+                    <h3 className='text-white'>Popular</h3>
                 </div>
                 <div className="row">
-                {getFeed && getFeed.map(feed =>(
-                    <CardList feed={feed} key={feed.id} />
+                {getPopular && getPopular.map(popular =>(
+                    <CardList feed={popular} key={popular.id} />
                 ))}
                     
                 </div>
@@ -46,4 +46,4 @@ const Feed = () => {
   )
 }
 
-export default Feed
+export default Popular

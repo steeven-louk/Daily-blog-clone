@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './styles/style.scss'
 import CardList from '../../components/cardList';
+import EmptyBookmark from '../../components/emptyBookmark';
 
 
 const Bookmark = () => {
@@ -29,7 +30,7 @@ console.log('book', getBookmark)
     <div className='feed__section'>
         <div className="feed__container">
             <div className="container">
-            {getBookmark === null ? ('test du bookmark') :
+            {getBookmark === null ? <EmptyBookmark /> :
                 (
                     <div>
                     <div className="title d-flex justify-content-between">

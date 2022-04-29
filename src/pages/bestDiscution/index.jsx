@@ -32,7 +32,6 @@ const BestDiscution = () => {
             <div className="container">
                 <div className="title d-flex justify-content-between">
                     <h3 className='text-white'>Best discussions</h3>
-                    <h4 className='text-muted'>Add to shorcut +</h4>
                 </div>
                 <div className="row">
                 {getDiscution && getDiscution.sort((a,b) => b.comments_count - a.comments_count).map(discution =>(

@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar__section">
-      <div className="sidebar-container mx-3 py-5  text-white">
+      <div className="sidebar-container px-3 py-5  text-white">
         <div className="d-flex flex-column">
            <div className={showFilter ? 'show-filter' : 'filter-side' }>
                 <FeedFilter setShow={setShowFilter} showFilter={showFilter}/>
@@ -26,7 +26,7 @@ const Sidebar = () => {
             <FontAwesomeIcon icon="fa-solid fa-sliders" className="icon" onClick={()=> setShowFilter(!showFilter)} />
           </header>
           <hr />
-          <div className="">
+          <div>
             <div className="discover text-muted">
               <h5 className="text-muted my-2">Discover</h5>
               <ul className="nav d-flex flex-column">
@@ -35,9 +35,9 @@ const Sidebar = () => {
                     className="my-2"
                     icon="fa-solid fa-fire-flame-curved"
                   />
-                  <a href="/" className="nav-link">
+                  <Link to="/popular" className="nav-link">
                     Popular
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <FontAwesomeIcon

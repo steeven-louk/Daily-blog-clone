@@ -1,0 +1,22 @@
+.empty-component{
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   margin: auto;
+   text-align: center;
+
+   .icon{
+       height: 55px;
+       
+   }
+
+  .go-feed a{
+      border-radius: 15px;
+      font-weight: 600;
+      padding: 10px 18px;
+
+      &:hover{
+          background: grey !important
+      }
+  }
+}

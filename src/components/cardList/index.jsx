@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -12,36 +12,43 @@ const CardList = ({
     social_image,
     reading_time_minutes,
     url,
-    user
-  }, feed,
+    user,
+  },
+  feed,
 }) => {
+  const [bookmark, setBookmark] = useState(false);
 
+  const addBook = () => {
+    try {
+      //const articleId = id;
 
-   const addBook =  () =>{
-      try {
+      let article = JSON.parse(localStorage.getItem("article"));
+      // console.log(article);
 
-
-        let article = JSON.parse(localStorage.getItem('article'))
+      if (article) {
+        article.push(feed);
+        localStorage.setItem("article", JSON.stringify(article));
+        setBookmark(true);
         console.log(article);
-
-        if(article) {
-          article.push(feed);
-          localStorage.setItem("article", JSON.stringify(article));
-          console.log(article);
-        }
-        else{
-          article = [];
-          article.push(feed);
-          localStorage.setItem("article", JSON.stringify(article));
-          console.log(article);
-        }
-       
-      } catch (error) {
-        console.log('error', error.message);
+      } else {
+        article = [];
+        article.push(feed);
+        localStorage.setItem("article", JSON.stringify(article));
+        setBookmark(true);
+        //console.log(article);
       }
-   }
 
+      if (bookmark === true) {
+        let index = article.indexOf(-1);
+        article = article.slice(index);
 
+        localStorage.setItem("article", JSON.stringify(article));
+        setBookmark(false);
+      }
+    } catch (error) {
+      console.log("error", error.message);
+    }
+  };
 
   return (
     <>
@@ -84,20 +91,15 @@ const CardList = ({
         </div>
 
         <div className="card-body">
-          <a href={url} target='_blank' rel="noreferrer">
-          <h5 className="card-title text-white text-uppercase">
-            {title}
-          </h5>{" "}
-          <br />
-          <span className="text-muted">{readable_publish_date} - {reading_time_minutes}min read time</span>
-          <div className="img-card">
-            <img
-              src={social_image}
-              alt=""
-              className="card-img"
-            />
-
-          </div>
+          <a href={url} target="_blank" rel="noreferrer">
+            <h5 className="card-title text-white text-uppercase">{title}</h5>{" "}
+            <br />
+            <span className="text-muted">
+              {readable_publish_date} - {reading_time_minutes}min read time
+            </span>
+            <div className="img-card">
+              <img src={social_image} alt="" className="card-img" />
+            </div>
           </a>
           <div className="footer-card d-flex justify-content-between">
             <span>
@@ -110,12 +112,15 @@ const CardList = ({
             </span>
 
             <span>
-              <FontAwesomeIcon className="pt-3 " icon="fa-solid fa-message" /> {comments_count}
+              <FontAwesomeIcon className="pt-3 " icon="fa-solid fa-message" />{" "}
+              {comments_count}
             </span>
 
             <span onClick={addBook}>
               <FontAwesomeIcon
-                className="pt-3 px-3"
+                className={
+                  bookmark === true ? "pt-3 px-3 bookmark-active" : "pt-3 px-3"
+                }
                 icon="fa-solid fa-bookmark"
               />
               {public_reactions_count}
