@@ -10,7 +10,7 @@ import CardList from '../../components/cardList';
 
 const Search = () => {
 
-    const URL = "https://dev.to/api/articles";
+    const URL = 'https://dev.to/api/articles';
 
     const [getFeed, setgetFeed] = useState([]);
     const [query, setQuery] = useState('');
@@ -31,12 +31,11 @@ const Search = () => {
         e.preventDefault();
 
         if(!query) return [];
-
+      
         
     }
 
 
-console.log( query)
     useEffect(() => {
        getfeed();
     }, []);

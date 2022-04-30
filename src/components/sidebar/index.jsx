@@ -4,18 +4,23 @@ import { Link } from "react-router-dom";
 import FeedFilter from "../feedFilter";
 import "./styles/styles.scss";
 
-const Sidebar = () => {
+const Sidebar = ({show, setShow}) => {
 
     const [showFilter, setShowFilter] = useState(false);
 
 
   return (
     <div className="sidebar__section">
+        <div className="close mx-5 pt-3" onClick={() =>setShow(!show)}>
+        <FontAwesomeIcon icon="fa-solid fa-xmark" className="w-5" />
+        </div>
       <div className="sidebar-container px-3 py-5  text-white">
+     
         <div className="d-flex flex-column">
            <div className={showFilter ? 'show-filter' : 'filter-side' }>
                 <FeedFilter setShow={setShowFilter} showFilter={showFilter}/>
            </div>
+
           <header className="d-flex  text-muted justify-content-between">
             <h5>
             <Link to="/" >
@@ -25,7 +30,7 @@ const Sidebar = () => {
             </h5>
             <FontAwesomeIcon icon="fa-solid fa-sliders" className="icon" onClick={()=> setShowFilter(!showFilter)} />
           </header>
-          <hr />
+          <hr className="separator"/>
           <div>
             <div className="discover text-muted">
               <h5 className="text-muted my-2">Discover</h5>

@@ -1,12 +1,21 @@
 .navbar__section {
-    z-index: 3;
+    z-index: 15;
     position: sticky;
     top: 0;
-    border-bottom: 1px solid #ff0000;
-.profile{
-    position: relative;
-    display: flex;
-    cursor: pointer;
+    border-bottom: 1px solid #9b9595;
+
+    .menu{
+        display: none;
+        visibility: hidden;
+        
+    }
+
+
+
+    .profile{
+        position: relative;
+        display: flex;
+        cursor: pointer;
     
     img{
         width: 45px;
@@ -46,4 +55,31 @@
         background: rgba(221, 221, 221, 0.199);
     }
 }
+}
+
+
+/*********MEDIA QUERY***********/
+
+@media screen and (max-width : 1026px) {
+    .navbar__section{
+        z-index: 15;
+        .nav-brand{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto
+        }
+
+        .menu{
+            display: block;
+            visibility: visible;
+            cursor: pointer;
+            
+          
+        }
+
+        .profile{
+            display: none;
+        }
+    }
 }

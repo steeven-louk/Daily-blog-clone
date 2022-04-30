@@ -1,15 +1,28 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
+import Sidebar from '../sidebar';
 import './styles/styles.scss'
 
 
 function Navbar() {
 
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+
+
 
   return (
     <div className="navbar__section">
         <nav className='navbar justify-content-between d-flex bg-dark text-light px-4'>
+        <div className="menu-icon">
+          <div className="menu" onClick={()=> setShowSidebar(!showSidebar)}>
+              <FontAwesomeIcon icon="fa-solid fa-bars" />
+          </div>
+              {showSidebar? <Sidebar show={showSidebar} setShow={setShowSidebar}/> : '' }
+            
+        </div>
+         
+       
           <a href="/" className="nav-brand fw-bold">DEV-DAILY</a>
           <div className="profile" onClick={()=> setShowSubMenu(!showSubMenu)}>
             <h2 className='me-2'>2</h2>

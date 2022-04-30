@@ -10,7 +10,7 @@
     max-width: 250px;
     width: 100%;
     //border: 2px solid #ff0000;
-    border: 1px solid red ;
+    border: 1px solid #9b9595 ;
     border-left: 0;
     border-bottom: 0;
 
@@ -42,16 +42,11 @@
         border-radius: 10px;
        
 
-        .icon{
-            color: red;
-            background-color: red;
-        }
 
         &:hover{
-            background: rgba(0, 0, 0,.5);
-            
-           
+            background: rgba(0, 0, 0,.5);           
         }
+
     }
 
     .footer{
@@ -60,4 +55,52 @@
     }
 
   
+}
+
+
+
+
+/****MEDIA QUERY****/
+
+@media screen and (max-width : 1026px) {
+    .sidebar__section {
+
+        position:fixed;
+        top:0;
+        left:0;
+        z-index: 5;
+        max-height: 100vh;
+        height: 100%;
+        background: #0c0c0c;
+
+        header h5{
+           font-size: 17px;
+        }
+
+
+        .discover ul li{
+            margin-top: 5px;
+
+            &:nth-child(4){
+                display: none;
+            }
+            
+        }
+        .Manage ul li{
+            margin-top: 5px;
+
+            &:nth-child(1){
+                display: none;
+            }
+            &:nth-child(3){
+                display: none;
+            }
+            
+        }
+
+        .separator, .discover h5, .Manage h5{
+            display: none;
+        }
+      
+    }
 }

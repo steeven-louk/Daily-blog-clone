@@ -13,3 +13,15 @@
       max-height: 100vh;
     }*/
 }
+
+
+/******media query*****/
+
+@media screen and (max-width: 1090px) {
+  .page{
+    margin: 0;
+  }
+  .sidebar{
+    display: none;
+  }
+}
