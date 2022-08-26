@@ -1,7 +1,8 @@
 .navbar__section {
     z-index: 15;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     border-bottom: 1px solid #9b9595;
 
     .menu{

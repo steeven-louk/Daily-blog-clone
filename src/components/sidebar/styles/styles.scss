@@ -1,7 +1,7 @@
 .sidebar__section{
    
-    position:fixed;
-    top:3.95em;
+    position: fixed;
+    top:0;
     left:0;
     z-index: 2;
 
@@ -21,7 +21,7 @@
         transform: translateX(-30em);
         visibility: hidden;
         position: absolute;
-        top:0;
+        top:65px;
         z-index: 7;
     }
 
@@ -29,7 +29,8 @@
         transition: .4s all ease-in;
         visibility: visible;
         position: absolute;
-        top:0;
+        top: 65px;
+        left: 0;
         z-index: 7;
         
         transform: translateX(0em);
@@ -51,7 +52,7 @@
 
     .footer{
         position: absolute;
-        bottom: 0;
+        bottom: -50px;
     }
 
   
